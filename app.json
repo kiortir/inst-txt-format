@@ -1,0 +1,20 @@
+{
+    "name": "Telegram Support Bot",
+    "description": "Deploy a Telegram bot that will help you to hide your identity.",
+    "keywords": [
+      "telegram-bot",
+      "python",
+      "proxy"
+    ],
+    "website": "https://github.com/kiortir/inst-txt-format",
+    "repository": "https://github.com/kiortir/inst-txt-format",
+    "success_url": "https://github.com/kiortir/inst-txt-format",
+    "env": {
+      "HEROKU_APP_NAME": {
+        "description": "The name of your Heroku app. Yes, again. Just copy-paste it!"
+      },
+      "TELEGRAM_TOKEN": {
+        "description": "Your bot's token. Visit https://t.me/BotFather"
+      }
+    }
+}
