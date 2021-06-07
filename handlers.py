@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from telegram.ext import Updater
+
 from telegram.ext import MessageHandler, Filters, CommandHandler
 
 
@@ -26,9 +26,3 @@ def setup_dispatcher(dp):
     dp.add_handler(CommandHandler('help', tele_help))
     dp.add_handler(MessageHandler(Filters.text, f_echo))
     return dp
-
-
-updater = Updater(token=TOKEN, use_context=True)
-dispatcher = updater.dispatcher
-
-updater.start_polling()
