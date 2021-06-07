@@ -1,10 +1,10 @@
 {
-    "name": "Telegram Support Bot",
-    "description": "Deploy a Telegram bot that will help you to hide your identity.",
+    "name": "Telegram Instagram Text Formatter",
+    "description": "A bot that will help you to format text for posts.",
     "keywords": [
       "telegram-bot",
       "python",
-      "proxy"
+      "instagram"
     ],
     "website": "https://github.com/kiortir/inst-txt-format",
     "repository": "https://github.com/kiortir/inst-txt-format",
