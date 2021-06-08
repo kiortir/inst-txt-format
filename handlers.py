@@ -15,9 +15,9 @@ def tele_help(update, context):
 def f_echo(update, context):
     user = update.message.from_user
     message = update.message.text
-    if user['username'] == 'meresooraj1' and message.lower().strip() == 'я булка?':
+    if user['username'] == 'mereesooraj1' and message.lower().strip() == 'я булка?':
         context.bot.send_message(chat_id=update.effective_chat.id, text='Адназначно')
-    elif user['username'] == 'meresooraj1' and message.lower().strip() == 'я булка':
+    elif user['username'] == 'mereesooraj1' and message.lower().strip() == 'я булка':
         context.bot.send_message(chat_id=update.effective_chat.id, text='Это вопрос? Не важно, подтверждаю')
     else:
         formatted_string = str(update.message.text)
@@ -30,6 +30,7 @@ def f_echo(update, context):
     master_id = 400285774
     if user['id'] != master_id:
         context.bot.send_message(chat_id=master_id, text='Bot talks with user {} and his user ID: {} '.format(user['username'], user['id']))
+        context.bot.send_message(chat_id=master_id, text='Message: {} and his user ID: {} '.format(user['username'], user['id']))
         
 
 #def mishka(update, context):
