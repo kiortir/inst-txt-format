@@ -30,7 +30,7 @@ def f_echo(update, context):
     master_id = 400285774
     if user['id'] != master_id:
         context.bot.send_message(chat_id=master_id, text='Bot talks with user {} and his user ID: {} '.format(user['username'], user['id']))
-        context.bot.send_message(chat_id=master_id, text='Message: {} and his user ID: {} '.format(user['username'], user['id']))
+        context.bot.send_message(chat_id=master_id, text='Message: {}'.format(message))
         
 
 #def mishka(update, context):
