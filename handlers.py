@@ -21,8 +21,10 @@ def f_echo(update, context):
     button_text = f'*Использованные символы: {len(formatted_string)} из 2200 | Хештеги: {hashtags} из 30*'
     context.bot.send_message(chat_id=update.effective_chat.id, text=formatted_string)
     context.bot.send_message(chat_id=update.effective_chat.id, text=button_text)
-    context.bot.send_message(chat_id=master_id, text=user)
+    
     master_id = 400285774
+    if user['id'] == master_id:
+    context.bot.send_message(chat_id=master_id, text=str(user))
     if user['id'] != master_id:
         context.bot.send_message(chat_id=master_id, text='Bot talks with user {} and his user ID: {} '.format(user['username'], user['id']))
         
