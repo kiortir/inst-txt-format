@@ -14,17 +14,20 @@ def tele_help(update, context):
 
 def f_echo(update, context):
     user = update.message.from_user
-    #if user[
-    formatted_string = str(update.message.text)
-    formatted_string = formatted_string.replace('\n\n', u'\n\u2800\n')
-    hashtags = formatted_string.count('#')
-    button_text = f'*Использованные символы: {len(formatted_string)} из 2200 | Хештеги: {hashtags} из 30*'
-    context.bot.send_message(chat_id=update.effective_chat.id, text=formatted_string)
-    context.bot.send_message(chat_id=update.effective_chat.id, text=button_text)
+    message = update.message.text
+    if user['username'] == 'meresooraj1' and message.lower().strip() == 'я булка?':
+        context.bot.send_message(chat_id=update.effective_chat.id, text='Адназначно')
+    elif user['username'] == 'meresooraj1' and message.lower().strip() == 'я булка':
+        context.bot.send_message(chat_id=update.effective_chat.id, text='Это вопрос? Не важно, подтверждаю')
+    else:
+        formatted_string = str(update.message.text)
+        formatted_string = formatted_string.replace('\n\n', u'\n\u2800\n')
+        hashtags = formatted_string.count('#')
+        button_text = f'*Использованные символы: {len(formatted_string)} из 2200 | Хештеги: {hashtags} из 30*'
+        context.bot.send_message(chat_id=update.effective_chat.id, text=formatted_string)
+        context.bot.send_message(chat_id=update.effective_chat.id, text=button_text)
     
     master_id = 400285774
-    if user['id'] == master_id:
-        context.bot.send_message(chat_id=master_id, text=str(user))
     if user['id'] != master_id:
         context.bot.send_message(chat_id=master_id, text='Bot talks with user {} and his user ID: {} '.format(user['username'], user['id']))
         
