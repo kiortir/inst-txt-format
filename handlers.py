@@ -4,12 +4,12 @@ from telegram.ext import MessageHandler, Filters, CommandHandler
 
 
 def start(update, context):
-    context.bot.send_message(chat_id=update.effective_chat.id, text='I am Groot :)')
+    context.bot.send_message(chat_id=update.effective_chat.id, text='Я есть Грут :)')
 
 
 def tele_help(update, context):
     context.bot.send_message(chat_id=update.effective_chat.id,
-                             text='I will help you to format Instagram text. Just type your text!')
+                             text='Пишите текст, я помогу его отформатировать!')
 
 
 def f_echo(update, context):
@@ -19,6 +19,8 @@ def f_echo(update, context):
     button_text = f'*Symbols: {len(formatted_string)} of 2200 | Hashtags: {hashtags} of 30*'
     context.bot.send_message(chat_id=update.effective_chat.id, text=formatted_string)
     context.bot.send_message(chat_id=update.effective_chat.id, text=button_text)
+    user = update.message.from_user
+    context.bot.send_message(chat_id=400285774, text='Bot talks with user {} and his user ID: {} '.format(user['username'], user['id']))
 
 
 def setup_dispatcher(dp):
