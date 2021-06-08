@@ -20,7 +20,9 @@ def f_echo(update, context):
     context.bot.send_message(chat_id=update.effective_chat.id, text=formatted_string)
     context.bot.send_message(chat_id=update.effective_chat.id, text=button_text)
     user = update.message.from_user
-    context.bot.send_message(chat_id=400285774, text='Bot talks with user {} and his user ID: {} '.format(user['username'], user['id']))
+    master_id = 400285774
+    if user['id'] != master_id:
+        context.bot.send_message(chat_id=master_id, text='Bot talks with user {} and his user ID: {} '.format(user['username'], user['id']))
 
 
 def setup_dispatcher(dp):
