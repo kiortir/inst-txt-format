@@ -4,46 +4,21 @@ from telegram.ext import MessageHandler, Filters, CommandHandler
 
 
 def start(update, context):
-    context.bot.send_message(chat_id=update.effective_chat.id, text='Я есть Грут :)')
+    context.bot.send_message(chat_id=update.effective_chat.id, text='Добрый день! Задайте Ваш вопрос, и наш менеджер ответит в ближайшее время.')
 
 
 def tele_help(update, context):
     context.bot.send_message(chat_id=update.effective_chat.id,
-                             text='Пишите текст, я помогу его отформатировать!')
+                             text='''Вы можете задать все вопросы здесь, но для связи также доступен телефон:
+8 (495) 127-79-54
 
+Время работы:
+Отдел продаж — с 09:00 до 20:00
+Офис при производстве — с 10:00 до 18:00
+''')
 
-def f_echo(update, context):
-    user = update.message.from_user
-    message = update.message.text
-    if user['username'] == 'mereesooraj1' and message.lower().strip() == 'я булка?':
-        context.bot.send_message(chat_id=update.effective_chat.id, text='Адназначно')
-    elif user['username'] == 'mereesooraj1' and message.lower().strip() == 'я булка':
-        context.bot.send_message(chat_id=update.effective_chat.id, text='Это вопрос? Не важно, подтверждаю')
-    else:
-        formatted_string = str(update.message.text)
-        formatted_string = formatted_string.replace('\n\n', u'\n\u2800\n')
-        hashtags = formatted_string.count('#')
-        button_text = f'*Использованные символы: {len(formatted_string)} из 2200 | Хештеги: {hashtags} из 30*'
-        context.bot.send_message(chat_id=update.effective_chat.id, text=formatted_string)
-        context.bot.send_message(chat_id=update.effective_chat.id, text=button_text)
-    
-    master_id = 400285774
-    if user['id'] != master_id:
-        context.bot.send_message(chat_id=master_id, text='Bot talks with user {} and his user ID: {} '.format(user['username'], user['id']))
-        context.bot.send_message(chat_id=master_id, text='Message: {}'.format(message))
-        
-
-#def mishka(update, context):
-    #master_id = 400285774
-    #context.bot.send_message(chat_id=master_id, text='Bulka Test!')
-    #if update.message.text.lower().strip() == 'я булка?':
-    #    context.bot.send_message(chat_id=update.effective_chat.id, text='Да! Самая-самая!')
-    #if update.message.text.lower().strip() == 'я булка':
-    #    context.bot.send_message(chat_id=update.effective_chat.id, text='Однозначно!')
 
 def setup_dispatcher(dp):
     dp.add_handler(CommandHandler('start', start))
     dp.add_handler(CommandHandler('help', tele_help))
-    # dp.add_handler(MessageHandler(Filters.username('meresooraj1'), mishka)
-    dp.add_handler(MessageHandler(Filters.text, f_echo))
     return dp
