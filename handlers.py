@@ -10,6 +10,7 @@ def start(update, context):
 def tele_help(update, context):
     context.bot.send_message(chat_id=update.effective_chat.id,
                              text='''Вы можете задать все вопросы здесь, но для связи также доступен телефон:
+                             
 8 (495) 127-79-54
 
 Время работы:
