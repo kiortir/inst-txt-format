@@ -4,7 +4,7 @@ from telegram.ext import MessageHandler, Filters, CommandHandler
 
 
 def start(update, context):
-    context.bot.send_message(chat_id=update.effective_chat.id, text='Я есть Грут :)')
+    context.bot.send_message(chat_id=update.effective_chat.id, text='Привет! Отправь мне текст, и я расставлю невидимые пробелы, чтобы инстаграм не схлопывал абзацы')
 
 
 def tele_help(update, context):
